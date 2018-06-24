@@ -1,0 +1,21 @@
+- name: test win_dns_record
+  hosts: all
+  gather_facts: false
+
+  vars:
+    ansible_connection: winrm
+    ansible_winrm_port: 5985
+    ansible_winrm_transport: kerberos
+
+  tasks:
+    - name: add A record
+      win_dns_record:
+        domain: ad.skoopycorp.com
+        record_type: A
+        record_name: test
+        ttl:
+          time_type: hours
+          span: 6
+        record_data: 
+          key: ipv4address
+          value: 192.168.50.21
