@@ -1,0 +1,1 @@
+192.168.60.2 ansible_winrm_server_cert_validation=ignore ansible_connection=winrm ansible_user=Administrator ansible_password=vagrant

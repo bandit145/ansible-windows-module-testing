@@ -61,7 +61,7 @@ function Ensure-DNSRecord{
     #Check if record exists if wanted absent then remove
     if ($record_old){
         if ($state -eq "absent"){
-            Remove-DNSServerResourceRecord -InputObject $record_old
+            Remove-DNSServerResourceRecord -InputObject $record_old -ZoneName $domain -Force
             $result["changed"] = $true
         }
         #else check if object needs to be changed

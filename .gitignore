@@ -1,0 +1,4 @@
+#ignore Ansible retries
+testing/*.retry
+#vagrant ignore
+vagrant/.vagrant/*
